@@ -43,13 +43,14 @@
 			</ul>
 		</li>
 		{% for page in pages %}
-		<li id="menu-item-70" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-70"><a href="{% url 'isite:page' page.slug %}">{{ page.title}}</a></li>
+		<li id="menu-item-70" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-70"><a href="{% url 'isite:page' page.slug %}">{{ page.title}}</a>
 				<ul class="sub-menu">
 					{% for p in page.parents.all %}
-					<li id="menu-item-71" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-71"><a href="http://isvoe.ru/about/">О нас</a></li>
+					<li id="menu-item-71" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-71"><a href="{% url 'isite:page' p.slug %}">{{ p.title }}</a></li>
 					{% endfor %}
 				</ul>
 		{% endfor %}
+		</li>
 	</ul>
 </div>
 </div>
