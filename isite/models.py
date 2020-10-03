@@ -5,9 +5,14 @@ from tinymce.models import HTMLField
 
 class Category(models.Model):
     name = models.CharField(max_length=20, verbose_name='Категория')
+    slug = models.SlugField(allow_unicode=True)
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name = "Рубрика"
+        verbose_name_plural = "Рубрики"
 
 
 class Post(models.Model):
@@ -40,7 +45,7 @@ class Post(models.Model):
 
 class Page(models.Model):
     title = models.CharField(max_length=100, verbose_name="Заголовок")
-    text = models.TextField(verbose_name="")
+    text = HTMLField(verbose_name="Текст")
     parent = models.ForeignKey(
         "self",
         related_name='parents',
@@ -51,3 +56,7 @@ class Page(models.Model):
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        verbose_name = "Страница"
+        verbose_name_plural = "Страницы"

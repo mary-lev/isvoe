@@ -11,7 +11,7 @@
 				</div>
 			</form></li>
 <li id="nav_menu-2" class="widget-container widget_nav_menu"><h3 class="widget-title">Все о печати книг</h3><div class="menu-1-container"><ul id="menu-2" class="menu">
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-75"><a href="http://isvoe.ru/podgotovka-knigi/">Подготовка книги</a>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="http://isvoe.ru/podgotovka-knigi/">Подготовка книги</a>
 <ul class="sub-menu">
 	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81"><a href="http://isvoe.ru/redaktirovanie-knigi/">Редактирование книги</a></li>
 	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-80"><a href="http://isvoe.ru/korrektura-knigi/">Корректура книги</a></li>
@@ -46,21 +46,11 @@
 </ul></div></li>
 <li id="recent-posts-2" class="widget-container widget_recent_entries">		<h3 class="widget-title">Свежие записи</h3>		
 	<ul>
+		{% for post in posts|slice:":5" %}
 		<li>
-			<a href="http://isvoe.ru/%d1%81%d0%b4%d0%b0%d0%bd-%d0%b2-%d0%bf%d0%b5%d1%87%d0%b0%d1%82%d1%8c-%d1%81%d0%b1%d0%be%d1%80%d0%bd%d0%b8%d0%ba-%d0%bd%d0%b0%d1%83%d1%87%d0%bd%d1%8b%d1%85-%d1%81%d1%82%d0%b0%d1%82%d0%b5%d0%b9/">Сдан в печать сборник научных статей</a>
+			<a href="{% url 'isite:post' post.slug %}">{{ post.title }}</a>
 		</li>
-		<li>
-			<a href="http://isvoe.ru/%d0%bd%d0%be%d0%b2%d1%8b%d0%b9-%d0%b0%d0%b4%d1%80%d0%b5%d1%81-%d0%b8%d0%b7%d0%b4%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d1%81%d1%82%d0%b2%d0%b0/">НОВЫЙ АДРЕС ИЗДАТЕЛЬСТВА</a>
-		</li>
-		<li>
-			<a href="http://isvoe.ru/goarmarkosjankasper_penelope/">Гоар Маркосян-Каспер и ее Пенелопа. Переиздание романа.</a>
-		</li>
-		<li>
-			<a href="http://isvoe.ru/%d0%bf%d1%83%d0%b1%d0%bb%d0%b8%d0%ba%d0%b0%d1%86%d0%b8%d1%8f-%d0%ba%d0%bd%d0%b8%d0%b3%d0%b8-%d0%b1%d0%b5%d0%b7-%d0%bf%d1%80%d0%b0%d0%b2%d0%b0-%d0%bd%d0%b0-%d0%b6%d0%b8%d0%b7%d0%bd%d1%8c/">Публикация книги «Без права на жизнь» Н. Н. Азаренко</a>
-		</li>
-		<li>
-			<a href="http://isvoe.ru/%d0%b6%d0%b5%d1%80%d1%82%d0%b2%d1%8b-%d0%b1%d0%bb%d0%be%d0%ba%d0%b0%d0%b4%d1%8b-%d0%bb%d0%b5%d0%bd%d0%b8%d0%bd%d0%b3%d1%80%d0%b0%d0%b4%d0%b0/">Жертвы блокады Ленинграда</a>
-		</li>
+		{% endfor %}
 	</ul>
 </li>
 </ul>

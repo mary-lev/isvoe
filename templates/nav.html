@@ -1,16 +1,17 @@
 <div id="access" role="navigation">
 	<div class="skip-link screen-reader-text"><a href="#content" title="Перейти к содержимому">Перейти к содержимому</a></div>
 	<div class="menu-header">
-		<ul id="menu-1" class="menu"><li id="menu-item-75" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-75"><a href="http://isvoe.ru/podgotovka-knigi/">Подготовка книги</a>
-			<ul class="sub-menu">
-				<li id="menu-item-81" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81"><a href="http://isvoe.ru/redaktirovanie-knigi/">Редактирование книги</a>
-				</li>
-				<li id="menu-item-80" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-80"><a href="http://isvoe.ru/korrektura-knigi/">Корректура книги</a></li>
-				<li id="menu-item-79" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-79"><a href="http://isvoe.ru/verstka-knigi/">Верстка книги</a></li>
-				<li id="menu-item-78" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-78"><a href="http://isvoe.ru/dizajn-oblozhki-dlya-knigi/">Дизайн обложки книги</a></li>
-				<li id="menu-item-538" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-538"><a href="http://isvoe.ru/samostoyatelnaya-podgotovka-maketa/">Самостоятельная подготовка макета</a></li>
-			</ul>
-		</li>
+		<ul id="menu-1" class="menu">
+			<li id="menu-item-75" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-75"><a href="http://isvoe.ru/podgotovka-knigi/">Подготовка книги</a>
+				<ul class="sub-menu">
+					<li id="menu-item-81" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81"><a href="http://isvoe.ru/redaktirovanie-knigi/">Редактирование книги</a>
+					</li>
+					<li id="menu-item-80" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-80"><a href="http://isvoe.ru/korrektura-knigi/">Корректура книги</a></li>
+					<li id="menu-item-79" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-79"><a href="http://isvoe.ru/verstka-knigi/">Верстка книги</a></li>
+					<li id="menu-item-78" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-78"><a href="http://isvoe.ru/dizajn-oblozhki-dlya-knigi/">Дизайн обложки книги</a></li>
+					<li id="menu-item-538" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-538"><a href="http://isvoe.ru/samostoyatelnaya-podgotovka-maketa/">Самостоятельная подготовка макета</a></li>
+				</ul>
+			</li>
 		<li id="menu-item-74" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-74"><a href="http://isvoe.ru/izdanie-knigi/">Издание книги</a>
 			<ul class="sub-menu">
 				<li id="menu-item-169" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-169"><a href="http://isvoe.ru/izdat-knigu/">Издать книгу</a>
@@ -41,7 +42,14 @@
 				<li id="menu-item-97" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-97"><a href="http://isvoe.ru/oplata-i-dostavka/">Оплата и доставка</a></li>
 			</ul>
 		</li>
-		<li id="menu-item-497" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-497"><a href="http://isvoe.ru/knigi-svoego-izdatelstva-vrem/">Наши книги</a></li>
+		{% for page in pages %}
+		<li id="menu-item-70" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-70"><a href="{% url 'isite:page' page.slug %}">{{ page.title}}</a></li>
+				<ul class="sub-menu">
+					{% for p in page.parents.all %}
+					<li id="menu-item-71" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-71"><a href="http://isvoe.ru/about/">О нас</a></li>
+					{% endfor %}
+				</ul>
+		{% endfor %}
 	</ul>
 </div>
 </div>
