@@ -39,11 +39,10 @@ class Post(models.Model):
         return self.title
 
     def get_previous_post(self):
-        return Post.objects.get(id = self.id-1)
+        return Post.objects.get(id=self.id-1)
 
     def get_next_post(self):
         return Post.objects.get(id=self.id+1)
-
 
     class Meta:
         verbose_name = "Запись"

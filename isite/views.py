@@ -3,11 +3,15 @@ from django.views.generic.detail import DetailView
 
 from .models import Post, Page
 
+
 def index(request):
     text = "Свое издательство"
     posts = Post.objects.all()[:5]
     pages = Page.objects.filter(parent__isnull=True)
-    return render(request, 'isite/index.html', {'text': text, 'fresh_posts': posts, 'pages': pages})
+    return render(request, 'isite/index.html', {
+        'text': text,
+        'fresh_posts': posts,
+        'pages': pages})
 
 
 class ViewMixin(DetailView):

@@ -3,9 +3,6 @@
 {% block content %}
 		<div id="container">
 			<div id="content" role="main">
-
-			
-
 				<div id="nav-above" class="navigation">
 					{% if object.get_previous_post %}
 					<div class="nav-previous"><a href="{% url 'isite:post' object.get_previous_post.slug %}" rel="prev"><span class="meta-nav">&larr;</span> {{ object.get_previous_post.title }}</a></div>
