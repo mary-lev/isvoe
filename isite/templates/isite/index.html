@@ -4,22 +4,21 @@
 		<div id="container">
 			<div id="content" role="main">
 
-				<div id="nav-above" class="navigation">
-					<div class="nav-previous"></div>
-					<div class="nav-next"><a href="http://isvoe.ru/ivan-sokolov-moi-myortvyeseriya-vnezapno-stixi/" rel="next">Иван Соколов &#171;Мои мёртвые&#187;/серия &#171;внезапно стихи&#187; <span class="meta-nav">&rarr;</span></a></div>
-				</div><!-- #nav-above -->
-
 	
 {% for post in fresh_posts %}
 			<div id="post-688" class="post-688 post type-post status-publish format-standard hentry category-avtorskie-knigi category-1">
 			<h2 class="entry-title"><a href="{% url 'isite:post' post.slug %}">{{ post.title }}</a></h2>
 
 			<div class="entry-meta">
-				<span class="meta-prep meta-prep-author">Опубликовано</span> <a href="http://isvoe.ru/goarmarkosjankasper_penelope/" title="20:17" rel="bookmark"><span class="entry-date">{{ post.published_at|date }}</span></a> <span class="meta-sep">автором</span> <span class="author vcard"><a class="url fn n" href="http://isvoe.ru/author/admin/" title="Посмотреть все записи автора Редактор">{{ post.author.first_name }}</a></span>
+				<span class="meta-prep meta-prep-author">Опубликовано</span> <span class="entry-date">{{ post.published_at|date }}</span> <span class="meta-sep">автором</span> <span class="author vcard"><a class="url fn n" href="http://isvoe.ru/author/admin/" title="Посмотреть все записи автора Редактор">{{ post.author.first_name }}</a></span>
 			</div><!-- .entry-meta -->
 
 			
-			<div class="entry-content">{{ post.text|safe }}		
+			<div class="entry-content">
+				{% if post.image %}
+					<img src="{{MEDIA_URL}}{{ post.image }}" style='float:left;margin:15px'>
+				{% endif %}
+				{{ post.text|safe }}		
 			</div><!-- .entry-content -->
 	
 			<div class="entry-utility">
