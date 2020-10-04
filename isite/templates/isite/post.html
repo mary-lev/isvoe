@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block content %}
+		<div id="container">
+			<div id="content" role="main">
+
+			
+	<div id="nav-above" class="navigation">
+		<div class="nav-previous"><a href="http://isvoe.ru/page/2/" ><span class="meta-nav">&larr;</span> Предыдущие записи</a></div>
+		<div class="nav-next"></div>
+	</div><!-- #nav-above -->
+
+
+
+
+			<div id="post-728" class="post-728 post type-post status-publish format-standard hentry category-22">
+			<h2 class="entry-title"><a href="http://isvoe.ru/%d1%81%d0%b4%d0%b0%d0%bd-%d0%b2-%d0%bf%d0%b5%d1%87%d0%b0%d1%82%d1%8c-%d1%81%d0%b1%d0%be%d1%80%d0%bd%d0%b8%d0%ba-%d0%bd%d0%b0%d1%83%d1%87%d0%bd%d1%8b%d1%85-%d1%81%d1%82%d0%b0%d1%82%d0%b5%d0%b9/" rel="bookmark">Сдан в печать сборник научных статей</a></h2>
+
+			<div class="entry-meta">
+				<span class="meta-prep meta-prep-author">Опубликовано</span> <a href="http://isvoe.ru/%d1%81%d0%b4%d0%b0%d0%bd-%d0%b2-%d0%bf%d0%b5%d1%87%d0%b0%d1%82%d1%8c-%d1%81%d0%b1%d0%be%d1%80%d0%bd%d0%b8%d0%ba-%d0%bd%d0%b0%d1%83%d1%87%d0%bd%d1%8b%d1%85-%d1%81%d1%82%d0%b0%d1%82%d0%b5%d0%b9/" title="15:45" rel="bookmark"><span class="entry-date">27.04.2020</span></a> <span class="meta-sep">автором</span> <span class="author vcard"><a class="url fn n" href="http://isvoe.ru/author/admin/" title="Посмотреть все записи автора Редактор">Редактор</a></span>			</div><!-- .entry-meta -->
+
+				<div class="entry-content">
+				{{ text }}
+							</div><!-- .entry-content -->
+	
+			<div class="entry-utility">
+									<span class="cat-links">
+						<span class="entry-utility-prep entry-utility-prep-cat-links">Рубрика:</span> <a href="http://isvoe.ru/category/%d1%84%d0%b8%d0%bb%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d1%8f/" rel="category tag">Филология</a>					</span>
+					<span class="meta-sep">|</span>
+												<span class="comments-link"><span>Комментарии<span class="screen-reader-text"> к записи Сдан в печать сборник научных статей</span> отключены</span></span>
+							</div><!-- .entry-utility -->
+		</div><!-- #post-## -->
+
+		
+	
+
+
+			<div id="post-701" class="post-701 post type-post status-publish format-standard hentry category-1">
+			<h2 class="entry-title"><a href="http://isvoe.ru/%d0%bd%d0%be%d0%b2%d1%8b%d0%b9-%d0%b0%d0%b4%d1%80%d0%b5%d1%81-%d0%b8%d0%b7%d0%b4%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d1%81%d1%82%d0%b2%d0%b0/" rel="bookmark">НОВЫЙ АДРЕС ИЗДАТЕЛЬСТВА</a></h2>
+
+			<div class="entry-meta">
+				<span class="meta-prep meta-prep-author">Опубликовано</span> <a href="http://isvoe.ru/%d0%bd%d0%be%d0%b2%d1%8b%d0%b9-%d0%b0%d0%b4%d1%80%d0%b5%d1%81-%d0%b8%d0%b7%d0%b4%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d1%81%d1%82%d0%b2%d0%b0/" title="16:23" rel="bookmark"><span class="entry-date">11.04.2018</span></a> <span class="meta-sep">автором</span> <span class="author vcard"><a class="url fn n" href="http://isvoe.ru/author/admin/" title="Посмотреть все записи автора Редактор">Редактор</a></span>			</div><!-- .entry-meta -->
+
+				<div class="entry-content"> {{ text }}
+				
+							</div><!-- .entry-content -->
+	
+			<div class="entry-utility">
+									<span class="cat-links">
+						<span class="entry-utility-prep entry-utility-prep-cat-links">Рубрика:</span> <a href="http://isvoe.ru/category/%d0%b1%d0%b5%d0%b7-%d1%80%d1%83%d0%b1%d1%80%d0%b8%d0%ba%d0%b8/" rel="category tag">Без рубрики</a>					</span>
+					<span class="meta-sep">|</span>
+												<span class="comments-link"><span>Комментарии<span class="screen-reader-text"> к записи НОВЫЙ АДРЕС ИЗДАТЕЛЬСТВА</span> отключены</span></span>
+							</div><!-- .entry-utility -->
+		</div><!-- #post-## -->
+
+		
+	
+{% if posts %}
+{% for post in posts %}
+			<div id="post-688" class="post-688 post type-post status-publish format-standard hentry category-avtorskie-knigi category-1">
+			<h2 class="entry-title"><a href="http://isvoe.ru/goarmarkosjankasper_penelope/" rel="bookmark">{{ post.title }}</a></h2>
+
+			<div class="entry-meta">
+				<span class="meta-prep meta-prep-author">Опубликовано</span> <a href="http://isvoe.ru/goarmarkosjankasper_penelope/" title="20:17" rel="bookmark"><span class="entry-date">{{ post.published_at|date }}</span></a> <span class="meta-sep">автором</span> <span class="author vcard"><a class="url fn n" href="http://isvoe.ru/author/admin/" title="Посмотреть все записи автора Редактор">{{ post.author }}</a></span>			</div><!-- .entry-meta -->
+
+				<div class="entry-content">{{ post.text }}
+				</div><!-- .entry-content -->
+	
+			<div class="entry-utility">
+									<span class="cat-links">
+						<span class="entry-utility-prep entry-utility-prep-cat-links">Рубрика:</span> <a href="http://isvoe.ru/category/avtorskie-knigi/" rel="category tag">{{ post.category.title }}</a>, <a href="http://isvoe.ru/category/%d0%b1%d0%b5%d0%b7-%d1%80%d1%83%d0%b1%d1%80%d0%b8%d0%ba%d0%b8/" rel="category tag">Без рубрики</a>					</span>
+					<span class="meta-sep">|</span>
+												<span class="comments-link"><span>Комментарии<span class="screen-reader-text"> к записи Гоар Маркосян-Каспер и ее Пенелопа. Переиздание романа.</span> отключены</span></span>
+							</div><!-- .entry-utility -->
+							{% endfor %}
+		</div><!-- #post-## -->
+		{% endif %}
+
+		
+	
+
+				<div id="nav-below" class="navigation">
+					<div class="nav-previous"><a href="http://isvoe.ru/page/2/" ><span class="meta-nav">&larr;</span> Предыдущие записи</a></div>
+					<div class="nav-next"></div>
+				</div><!-- #nav-below -->
+			</div><!-- #content -->
+		</div><!-- #container -->
+
+{% endblock %}
