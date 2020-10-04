@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+		<div id="container">
+			<div id="content" role="main">
+
+				<div id="nav-above" class="navigation">
+					<div class="nav-previous"></div>
+					<div class="nav-next"><a href="http://isvoe.ru/ivan-sokolov-moi-myortvyeseriya-vnezapno-stixi/" rel="next">Иван Соколов &#171;Мои мёртвые&#187;/серия &#171;внезапно стихи&#187; <span class="meta-nav">&rarr;</span></a></div>
+				</div><!-- #nav-above -->
+
+	
+{% for post in posts %}
+			<div id="post-688" class="post-688 post type-post status-publish format-standard hentry category-avtorskie-knigi category-1">
+			<h2 class="entry-title"><a href="{% url 'isite:post' post.slug %}">{{ post.title }}</a></h2>
+
+			<div class="entry-meta">
+				<span class="meta-prep meta-prep-author">Опубликовано</span> <a href="http://isvoe.ru/goarmarkosjankasper_penelope/" title="20:17" rel="bookmark"><span class="entry-date">{{ post.published_at|date }}</span></a> <span class="meta-sep">автором</span> <span class="author vcard"><a class="url fn n" href="http://isvoe.ru/author/admin/" title="Посмотреть все записи автора Редактор">{{ post.author }}</a></span>
+			</div><!-- .entry-meta -->
+
+			
+			<div class="entry-content">{{ post.text|safe }}		
+			</div><!-- .entry-content -->
+	
+			<div class="entry-utility">
+				<span class="cat-links">
+					<span class="entry-utility-prep entry-utility-prep-cat-links">Рубрика:</span><a href="http://isvoe.ru/category/avtorskie-knigi/" rel="category tag">{{ post.category.title }}</a>, <a href="http://isvoe.ru/category/%d0%b1%d0%b5%d0%b7-%d1%80%d1%83%d0%b1%d1%80%d0%b8%d0%ba%d0%b8/" rel="category tag">Без рубрики</a>
+				</span>
+			</div><!-- .entry-utility -->	
+		</div><!-- #post-## -->
+{% endfor %}
+		
+		<div id="nav-below" class="navigation">
+			<div class="nav-previous"><a href="http://isvoe.ru/page/2/" ><span class="meta-nav">&larr;</span> Предыдущие записи</a>
+			</div>
+			<div class="nav-next"></div>
+		</div><!-- #nav-below -->
+	</div><!-- #content -->
+</div><!-- #container -->
+
+{% endblock %}

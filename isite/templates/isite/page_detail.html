@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+		<div id="container">
+			<div id="content" role="main">
+
+				<div id="post-23" class="post-23 page type-page status-publish hentry">
+											<h1 class="entry-title"> {{object.title }}</h1>					
+					<div class="entry-content">
+						{{ object.text|safe }}	
+					</div><!-- .entry-content -->
+				</div><!-- #post-## -->
+				<!-- #nav-below -->
+			</div><!-- #content -->
+		</div><!-- #container -->
+
+{% endblock %}
