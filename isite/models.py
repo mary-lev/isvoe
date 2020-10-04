@@ -26,6 +26,7 @@ class Post(models.Model):
         auto_now=False,
         auto_now_add=False,
         verbose_name='Дата публикации')
+    image = models.ImageField(null=True, blank=True)
     text = HTMLField(verbose_name='Текст')
     author = models.ForeignKey(
         User,
@@ -50,6 +51,7 @@ class Post(models.Model):
 class Page(models.Model):
     title = models.CharField(max_length=100, verbose_name="Заголовок")
     text = HTMLField(verbose_name="Текст")
+    image = models.ImageField(null=True, blank=True)
     parent = models.ForeignKey(
         "self",
         related_name='parents',
