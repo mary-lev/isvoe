@@ -15,7 +15,7 @@
 			<h2 class="entry-title"><a href="{% url 'isite:post' post.slug %}">{{ post.title }}</a></h2>
 
 			<div class="entry-meta">
-				<span class="meta-prep meta-prep-author">Опубликовано</span> <a href="http://isvoe.ru/goarmarkosjankasper_penelope/" title="20:17" rel="bookmark"><span class="entry-date">{{ post.published_at|date }}</span></a> <span class="meta-sep">автором</span> <span class="author vcard"><a class="url fn n" href="http://isvoe.ru/author/admin/" title="Посмотреть все записи автора Редактор">{{ post.author }}</a></span>
+				<span class="meta-prep meta-prep-author">Опубликовано</span> <a href="http://isvoe.ru/goarmarkosjankasper_penelope/" title="20:17" rel="bookmark"><span class="entry-date">{{ post.published_at|date }}</span></a> <span class="meta-sep">автором</span> <span class="author vcard"><a class="url fn n" href="http://isvoe.ru/author/admin/" title="Посмотреть все записи автора Редактор">{{ post.author.first_name }}</a></span>
 			</div><!-- .entry-meta -->
 
 			
