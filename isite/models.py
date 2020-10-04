@@ -37,6 +37,10 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+    def get_previous_post(self):
+        return Post.objects.get(id = self.id-1)
+
+
     class Meta:
         verbose_name = "Запись"
         verbose_name_plural = "Записи"
