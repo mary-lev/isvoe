@@ -39,7 +39,10 @@ class Post(models.Model):
         return self.title
 
     def get_previous_post(self):
-        return Post.objects.get(id=self.id-1)
+        post = Post.objects.get(id=self.id-1)
+        if post:
+            return post
+        return ''
 
     def get_next_post(self):
         return Post.objects.get(id=self.id+1)

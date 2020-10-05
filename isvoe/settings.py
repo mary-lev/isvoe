@@ -29,6 +29,7 @@ INSTALLED_APPS = [
 
     'isite',
     'tinymce',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
