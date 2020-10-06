@@ -6,7 +6,7 @@ from . import views
 
 app_name = 'isite'
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('', views.index.as_view(), name='index'),
     path('<slug:slug>/', views.PageDetailView.as_view(), name='page'),
     path('post/<str:slug>/', views.PostDetailView.as_view(), name='post'),
     path('new/post/', views.PostCreateView.as_view(), name='post_new'),

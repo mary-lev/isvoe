@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+		<div id="container">
+			<div id="content" role="main">
+
+	
+{% for one_post in fresh_posts %}
+			<div id="post-688" class="post-688 post type-post status-publish format-standard hentry category-avtorskie-knigi category-1">
+			<h2 class="entry-title"><a href="{% url 'isite:post' one_post.slug %}">{{ one_post.title }}</a></h2>
+
+			<div class="entry-meta">
+				<span class="meta-prep meta-prep-author">Опубликовано</span> <span class="entry-date">{{ one_post.published_at|date }}</span> <span class="meta-sep">автором</span> <span class="author vcard"><a class="url fn n" href="http://isvoe.ru/author/admin/" title="Посмотреть все записи автора Редактор">{{ one_post.author.first_name }}</a></span>
+			</div><!-- .entry-meta -->
+
+			
+			<div class="entry-content">
+				{% if one_post.image %}
+					<img src="{{MEDIA_URL}}{{ one_post.image }}" style='float:left;margin:15px'>
+				{% endif %}
+				{{ one_post.text|safe }}		
+			</div><!-- .entry-content -->
+	
+			<div class="entry-utility">
+				<span class="cat-links">
+					<span class="entry-utility-prep entry-utility-prep-cat-links">Рубрика: </span><a href="http://isvoe.ru/category/avtorskie-knigi/" rel="category tag">{{ one_post.category.name }}</a>
+				</span>
+			</div><!-- .entry-utility -->	
+		</div><!-- #post-## -->
+{% endfor %}
+		
+		<div id="nav-below" class="navigation">
+			<div class="nav-previous"><a href="http://isvoe.ru/page/2/" ><span class="meta-nav">&larr;</span> Предыдущие записи</a>
+			</div>
+			<div class="nav-next"></div>
+		</div><!-- #nav-below -->
+	</div><!-- #content -->
+</div><!-- #container -->
+
+{% endblock %}
