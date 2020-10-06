@@ -4,8 +4,7 @@
 		<div id="container">
 			<div id="content" role="main">
 
-	
-{% for one_post in fresh_posts %}
+{% for one_post in page_obj %}
 			<div id="post-688" class="post-688 post type-post status-publish format-standard hentry category-avtorskie-knigi category-1">
 			<h2 class="entry-title"><a href="{% url 'isite:post' one_post.slug %}">{{ one_post.title }}</a></h2>
 
@@ -28,12 +27,17 @@
 			</div><!-- .entry-utility -->	
 		</div><!-- #post-## -->
 {% endfor %}
-		
+		<div class="pagination">
 		<div id="nav-below" class="navigation">
-			<div class="nav-previous"><a href="http://isvoe.ru/page/2/" ><span class="meta-nav">&larr;</span> Предыдущие записи</a>
+		{% if page_obj.has_previous %}
+			<div class="nav-previous"><a href="?page={{ page_obj.previous_page_number }}" ><span class="meta-nav">&larr;</span> Предыдущие записи</a>
+			</div>{% endif %}
+			{% if page_obj.has_next %}
+			<div class="nav-next"><a href="?page={{ page_obj.next_page_number }}" >Следующие записи <span class="meta-nav">&rarr;</span></a>
 			</div>
-			<div class="nav-next"></div>
+			{% endif %}
 		</div><!-- #nav-below -->
+	</div>
 	</div><!-- #content -->
 </div><!-- #container -->
 

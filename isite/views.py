@@ -17,6 +17,7 @@ class index(ViewMixin, ListView):
     model = Post
     paginate_by = 5
     template_name = 'index.html'
+    queryset = Post.objects.all()
 
 
 class PostDetailView(ViewMixin, DetailView):
