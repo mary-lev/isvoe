@@ -1,10 +1,17 @@
 {% extends 'base.html' %}
-
+{%  load crispy_forms_tags %}
 {% block content %}
+
 		<div id="container">
 			<div id="content" role="main">
-				{{ form }}
-			</div><!-- #content -->
+                  <form action="" method="post" class='comment-form'>
+
+                      {{ form }}
+                      <div class='form-actions'>
+                          <input type="submit" value="Submit" class="btn btn-primary">
+                      </div>
+                  </form>
+            </div><!-- #content -->
 		</div><!-- #container -->
 
 {% endblock %}

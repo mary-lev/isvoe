@@ -1,10 +1,18 @@
 {% extends 'base.html' %}
-
+{%  load crispy_forms_tags %}
 {% block content %}
+
 		<div id="container">
 			<div id="content" role="main">
-				{{ form }}
-			</div><!-- #content -->
+                <div id="respond" class="comment-respond">
+                    <h3 id="reply-title" class="comment-reply-title">Добавить пост</h3>
+                  <form action="" method="post" class='comment-form'>
+
+                      {% crispy form %}
+
+                  </form>
+                </div>
+            </div><!-- #content -->
 		</div><!-- #container -->
 
 {% endblock %}

@@ -29,6 +29,7 @@ INSTALLED_APPS = [
 
     'isite',
     'tinymce',
+    'crispy_forms',
     'django_extensions',
 ]
 
