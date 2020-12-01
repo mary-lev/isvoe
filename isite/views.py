@@ -6,19 +6,7 @@ from .models import Post, Page
 from .forms import PostForm
 
 
-class ViewMixin(View):
-    """
-    Основа для страниц сайта:
-    передаются последние записи и страницы для навигации.
-    """
-    def get_context_data(self, *args, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['pages'] = Page.objects.filter(parent__isnull=True)
-        context['fresh_posts'] = Post.objects.all()[:5]
-        return context
-
-
-class IndexView(ViewMixin, ListView):
+class IndexView(ListView):
     """
     Главная страница сайта: вывод пяти последних постов.
     """
@@ -28,14 +16,14 @@ class IndexView(ViewMixin, ListView):
     queryset = Post.objects.all()
 
 
-class PostDetailView(ViewMixin, DetailView):
+class PostDetailView(DetailView):
     """
     Шаблон для одного поста.
     """
     model = Post
 
 
-class PageDetailView(ViewMixin, DetailView):
+class PageDetailView(DetailView):
     """
     Шаблон для одной страницы.
     """
