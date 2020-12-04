@@ -7,5 +7,6 @@ urlpatterns = [
     path('tinymce/', include('tinymce.urls')),
     path('spblitgid/', include('litgid.urls')),
     path('', include('isite.urls')),
+    path('newsletter/', include('newsletter.urls')),
 
 ]

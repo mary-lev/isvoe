@@ -12,6 +12,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+SITE_ID = 2
 
 # Application definition
 
@@ -22,11 +23,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
 
     'isite',
     'tinymce',
     'crispy_forms',
     'django_extensions',
+    'sorl.thumbnail',
+    'newsletter',
     'litgid',
 ]
 
@@ -92,6 +96,18 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Newsletters
+
+NEWSLETTER_CONFIRM_EMAIL = False
+
+# Using django-tinymce
+NEWSLETTER_RICHTEXT_WIDGET = "tinymce.widgets.TinyMCE"
+
+# Amount of seconds to wait between each batch. Here one minute is used.
+NEWSLETTER_BATCH_DELAY = 60
+
+# Number of emails in one batch
+NEWSLETTER_BATCH_SIZE = 100
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
