@@ -1,7 +1,7 @@
 from pathlib import Path
 import os
 
-from .secret import SECRET_KEY
+from .secret import SECRET_KEY, EMAIL_HOST_PASSWORD
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -14,12 +14,12 @@ ALLOWED_HOSTS = ['*']
 
 SITE_ID = 2
 
-DEFAULT_FROM_EMAIL = 'admin@example.com'
+DEFAULT_FROM_EMAIL = 'letters@knix.ru'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'marylevchenko@gmail.com'
-EMAIL_PORT = 587
+EMAIL_HOST = 'mail.knix.ru'
+EMAIL_HOST_USER = 'letters@knix.ru'
+EMAIL_PORT = 25
 
 # Application definition
 
