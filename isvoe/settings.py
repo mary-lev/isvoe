@@ -32,12 +32,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
 
-    'isite',
     'tinymce',
     'crispy_forms',
     'django_extensions',
     'sorl.thumbnail',
     'newsletter',
+
+    'isite',
     'litgid',
 ]
 

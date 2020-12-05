@@ -1,5 +1,5 @@
 from django.conf import settings
-from django.urls import path
+from django.urls import path, include
 from django.conf.urls.static import static
 from . import views
 
@@ -7,6 +7,7 @@ from . import views
 app_name = 'litgid'
 urlpatterns = [
     path('', views.test, name='index'),
+    path('newsletter/', include('newsletter.urls')),
     ]
 
 if settings.DEBUG:

@@ -87,29 +87,18 @@
 					<input type="text" value="" name="s" id="s" />
 					<input type="submit" id="searchsubmit" value="Поиск" />
 				</div>
-			</form></aside><aside id="mc4wp_form_widget-2" class="widget widget_mc4wp_form_widget"><h3 class="widget-title">Подписаться на рассылку СПбЛитГида</h3><script>(function() {
-	window.mc4wp = window.mc4wp || {
-		listeners: [],
-		forms: {
-			on: function(evt, cb) {
-				window.mc4wp.listeners.push(
-					{
-						event   : evt,
-						callback: cb
-					}
-				);
-			}
-		}
-	}
-})();
-</script><!-- Mailchimp for WordPress v4.8.1 - https://wordpress.org/plugins/mailchimp-for-wp/ --><form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-1325 mc4wp-form-basic" method="post" data-id="1325" data-name="Default sign-up form" ><div class="mc4wp-form-fields"><p>
-	<label>Email: </label>
+			</form></aside>
 
-</p>
+                <aside>
+                    <form enctype="multipart/form-data" method="post" action="">
+                        {% csrf_token %}
+                        <label for="id_email_field">E-mail:</label><br/>
+                        <input type="email" name="email_field" required="" id="id_email_field">
+                        <button id="id_submit" name="submit" value="Subscribe" type="submit">Subscribe</button>
+                    </form>
+                </aside>
 
-<p>
 
-</p></div><label style="display: none !important;">Оставьте это поле пустым, если вы человек: <input type="text" name="_mc4wp_honeypot" value="" tabindex="-1" autocomplete="off" /></label><input type="hidden" name="_mc4wp_timestamp" value="1606845413" /><input type="hidden" name="_mc4wp_form_id" value="1325" /><input type="hidden" name="_mc4wp_form_element_id" value="mc4wp-form-1" /><div class="mc4wp-response"></div></form><!-- / Mailchimp for WordPress Plugin --></aside>
 		<aside id="recent-posts-2" class="widget widget_recent_entries">
 		<h3 class="widget-title">Последние рассылки</h3>
 		<ul>
